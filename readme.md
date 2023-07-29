@@ -40,6 +40,23 @@ python main.py
 
 Too see the resulting information from the example json.
 
+1. - Download the JSON data from your Tana workspace.
 
+2. Uploaded in the tana_info_jsons directory
 
+3. Renamed it to something easier to remember.
+
+4. Go to main.py and add the necessary variable for extraction.
+
+5. Run the command:
+
+```
+python main.py
+```
+
+## Thanks for reading!
+
+I expect this would be useful for Tana users that wants to easily extract structured information for the Tana information json.
+
+If you find a mistake just fork the repo and add a pull request! It can help this script be better.
 

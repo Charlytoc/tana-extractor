@@ -185,7 +185,7 @@ def format_tags(tags_csv: str, extraction_keyword:str) -> List[str]:
     return list_of_extractors
 
 
-def main(directory: str, filename: str, extraction_keyword: str, tags_to_extract: str):
+def main(directory: str, filename: str, extraction_keyword: str, tags_to_extract: str = ''):
 
     extractors = format_tags(tags_csv=tags_to_extract, extraction_keyword=extraction_keyword)
     json_path = search_file(directory, filename)
@@ -221,11 +221,21 @@ def main(directory: str, filename: str, extraction_keyword: str, tags_to_extract
             writer.writerow(res)
 
 
-if __name__ == "__main__":
 
+
+if __name__ == "__main__":
+    # Add the directory in which you are saving the jsons
     directory = "tana_info_jsons"
+
+    # Write the file name of the JSON from Tana here
     filename = "charlytoc.json"
+
+    # Add the termination you added in your tags to identified the extraction_slugs
     extraction_keyword = '_extractor'
+
+    # Add a string containing the name of the tags you want to extract
+    # You can also leave it as an empty string to extract all the nodes with the that contains the 
+    # extraction slug termination
     tags_to_extract = 'movie, idea'
 
     main(directory=directory, 
