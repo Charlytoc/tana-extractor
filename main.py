@@ -211,11 +211,10 @@ def main(directory: str, filename: str, extraction_keyword: str, tags_to_extract
             'created_at': datetime.datetime.fromtimestamp(obj['props']['created'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
         })
 
-    with open(f'results_{filename}.csv', 'w', newline='') as f:
+    with open(f'results_{filename}.csv', 'w', newline='', encoding='utf-8', errors='ignore') as f:
         writer = csv.DictWriter(f, fieldnames=['name', 'tag', 'fields','children', 'created_at'])
         writer.writeheader()
         for res in result:
-           
             res['fields'] = ', '.join(map(str, res['fields']))
             res['children'] = ', '.join(map(str, res['children']))
             writer.writerow(res)
@@ -228,7 +227,7 @@ if __name__ == "__main__":
     directory = "tana_info_jsons"
 
     # Write the file name of the JSON from Tana here
-    filename = "charlytoc.json"
+    filename = "improvado.json"
 
     # Add the termination you added in your tags to identified the extraction_slugs
     extraction_keyword = '_extractor'
@@ -236,7 +235,7 @@ if __name__ == "__main__":
     # Add a string containing the name of the tags you want to extract
     # You can also leave it as an empty string to extract all the nodes with the that contains the 
     # extraction slug termination
-    tags_to_extract = 'movie, idea'
+    tags_to_extract = ''
 
     main(directory=directory, 
          filename=filename, 
