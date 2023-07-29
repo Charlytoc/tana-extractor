@@ -47,19 +47,22 @@ python main.py
 
 Too see the resulting information from the example json.
 
-1. - Download the JSON data from your Tana workspace.
+### 1. Download the JSON data from your Tana workspace.
 
-2. Uploaded in the tana_info_jsons directory
+### 2. Upload it in the tana_info_jsons directory
 
-3. Renamed it to something easier to remember.
+### 3. Renamed it to something easier to remember.
 
-4. Go to main.py and add the necessary variable for extraction.
+### 4. Go to main.py and add the necessary variables for extraction.
 
-5. Run the command:
+### 5. Run the command:
 
 ```
 python main.py
 ```
+
+### 6. Use the created csv as you want!
+
 
 ## Limitations
 
