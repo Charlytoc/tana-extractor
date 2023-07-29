@@ -4,7 +4,7 @@
 
 If you are here you are possibly an user of Tana. Tana has a lot of features currently supported and its evolving faster. I already build another products around Tana, but this one is probably more useful because let's us extract information from the Tana json data.
 
-Youtube video: **Still uploading** 
+Youtube video: [Click here](https://www.youtube.com/watch?v=nTNAVMSEIRY)
 
 Clipcham video: [Click here](https://clipchamp.com/watch/lRuwwR5tSYO)
 
