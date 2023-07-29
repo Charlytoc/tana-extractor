@@ -54,6 +54,11 @@ Too see the resulting information from the example json.
 python main.py
 ```
 
+## Limitations
+
+The obvious limitation is that the field needs to be added to all the nodes that are of interest. But this process can be automated using Tana commands like **Ask AI** or maybe another useful commands. I was testing adding a default value to the tags that I'm interested and if I do it in this way Tana will add the default value just one time, and that is not useful for extract information, we want always an extraction_slug in the nodes that we want to retrieve in order to extract them.
+
+
 ## Thanks for reading!
 
 I expect this would be useful for Tana users that wants to easily extract structured information for the Tana information json.
