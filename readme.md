@@ -32,4 +32,14 @@ Barbie #movie
 
 ## 3. That all, now extract information.
 
+Follow the next steps to start retrieve information from your own json or just run 
+
+```
+python main.py
+```
+
+Too see the resulting information from the example json.
+
+
+
 
