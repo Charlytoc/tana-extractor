@@ -124,30 +124,54 @@ def find_children_objects(parent_objects, docs):
     
     return children_objects
 
+
+
 def find_tuple_fields(docs, child_objects):
     fields = {}
 
     # Convert the docs into a dictionary for faster lookup
     docs_dict = {doc['id']: doc for doc in docs}
-
+    # print(child_objects)
     for parent_id, children in child_objects.items():
         temp_list = []
+       
+        fields_of_node = []
+
+
         for child in children:
+            _field = {
+                        # "name": '',
+                        # "values": []
+                    }
+            key = ''
             if '_docType' in child['props'] and child['props']['_docType'] == 'tuple':
+                # print(f'This child is tuple {child}')
                 if 'children' in child:
+                    
+                    number = 1
+                    
                     for grandchild_id in child['children']:
                         grandchild_props = docs_dict.get(grandchild_id, {}).get('props', {})
+                        
+                        
                         name = grandchild_props.get('name')
-                        if name is not None:
-                            temp_list.append(name)
 
-        # Convert list to list of key-value pair dictionaries
-        if len(temp_list) % 2 == 1:  # If the list length is odd, discard the last element
-            temp_list = temp_list[:-1]
+                        if name is not None and number == 1:
+                            key = name
+                            number += 1
+                        else:
+                            _field.setdefault(key, []).append(name)
+                            number += 1
 
-        fields[parent_id] = [{temp_list[i]: temp_list[i + 1]} for i in range(0, len(temp_list), 2)] if temp_list else []
+            
+            if _field.keys() and list(_field.keys())[0] != '': 
+                # Check if the key is not an empty string before appending
+                fields_of_node.append(_field)
 
+        # fields[parent_id] = [{temp_list[i]: temp_list[i + 1]} for i in range(0, len(temp_list), 2)] if temp_list else []
+        fields[parent_id] = fields_of_node
     return fields
+
 
 def find_children_nodes_for_parent(docs, child_objects):
     children_for_nodes = {}
